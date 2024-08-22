@@ -1,5 +1,3 @@
-
-
 const Success = () => {
   return (
     <div>

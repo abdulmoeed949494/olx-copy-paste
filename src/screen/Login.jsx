@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import "../App.css";
 import { useNavigate } from "react-router-dom";
-import Success from "./Success";
+// import Success from "./Success";
 import Error from "./Error";
 import { StateContext } from "../state";
 
@@ -48,7 +48,7 @@ const Login = () => {
       localStorage.setItem("input", JSON.stringify(input));
       handleInputlength()
       setSuccess(true);
-      Successtimer();
+      // Successtimer();
       handleOrderPlacement()
       // alert("Order Placed")
       navigate("/");

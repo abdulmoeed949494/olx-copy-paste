@@ -19,9 +19,7 @@ const Logout = () => {
     }
 
 //     const { loggout } = useContext(StateContext)
-
 //   const navigate = useNavigate();
-
 //     const LogoutFunc = () => {
 //         loggout()
 //         navigate("/login")
@@ -31,8 +29,8 @@ const Logout = () => {
     <div>
       <Header />
       <div className='logoutmain'>
-        <div className='logoutdiv'>
-          <h1 className='logouthone'>Logout</h1>
+        <div className='logoutdiv bg-gray-100'>
+          <h1 className='logouthone text-black'>Logout</h1>
           <button className='logoutbtn' onClick={LogoutFunc}>Logout</button>
         </div>
       </div>

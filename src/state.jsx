@@ -55,8 +55,6 @@ export const StateContext = createContext(null)
     }
   }, [searchFilter]);
 
-  const [searchOrderFilter, setSearchOrderFilter] = useState("")
-
   useEffect(() => {
     window.localStorage.setItem("local", JSON.stringify(cart))
   }, [cart])
@@ -164,23 +162,16 @@ const UserdecreaseQuantity = (id) => {
 
   const CartLocal = () => {
     let r = (Math.random()).toString(36).substring(7)
-    // console.log("🚀 ~ CartLocal ~ r:", r)
     let use =  localStorage.getItem("userCart", JSON.stringify(userCart)) || "[]"
     use = JSON.parse(use)
     if(userCart.length > 1){
       userCart.forEach(element => {
         element.OrderNo = r
-        // element.delivered = false
       });
       use.push(userCart)
-    // localStorage.setItem("userCart", JSON.stringify(use))  
     }
-    // console.log("🚀 ~ CartLocal ~ use:", userCart)
-    userCart[0].OrderNo = r
-    // userCart[0].delivered = false
-    
+    userCart[0].OrderNo = r  
     use.push(userCart)
-    // localStorage.setItem("userCart", JSON.stringify(use))
   }
 
   const LocalSt = localStorage.getItem("userCart", userCart);
@@ -213,7 +204,7 @@ const UserdecreaseQuantity = (id) => {
   
   
   return <StateContext.Provider value={{
-      products, setProducts, input, setInput, error, setError, success, setSuccess, Successtimer, Errortimer, SignupInput, setSignupInput, isLogin, setIsLogin, login, userCart, setUserCart, UserincreaseQuantity, UserdecreaseQuantity, searchFilter, setSearchFilter, cart, setCart, addToCart, increaseQuantity, decreaseQuantity, showCart, setShowCart, UserPageOpen, wishlist, setWishList, favoriteFunc, increaseWishListQuantity, decreaseWishListQuantity, handleOrderPlacement, LocalSt, CartLocal, toggle, setToggle, CartAddToCartLocal, userInput, toggleCart, searchOrderFilter, setSearchOrderFilter
+      products, setProducts, input, setInput, error, setError, success, setSuccess, Successtimer, Errortimer, SignupInput, setSignupInput, isLogin, setIsLogin, login, userCart, setUserCart, UserincreaseQuantity, UserdecreaseQuantity, searchFilter, setSearchFilter, cart, setCart, addToCart, increaseQuantity, decreaseQuantity, showCart, setShowCart, UserPageOpen, wishlist, setWishList, favoriteFunc, increaseWishListQuantity, decreaseWishListQuantity, handleOrderPlacement, LocalSt, CartLocal, toggle, setToggle, CartAddToCartLocal, userInput, toggleCart
   }}>
     {children}
   </StateContext.Provider>
